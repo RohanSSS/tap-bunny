@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/RohanSSS/Node-Shell-learning#readme",
   "devDependencies": {
+    "tap-spec": "^5.0.0",
     "tape": "^4.10.1"
   }
 }
