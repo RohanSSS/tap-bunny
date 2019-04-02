@@ -4,7 +4,7 @@
   "description": "learning node shell, with some experimentation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape test.js | node bunny.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/RohanSSS/Node-Shell-learning/issues"
   },
-  "homepage": "https://github.com/RohanSSS/Node-Shell-learning#readme"
+  "homepage": "https://github.com/RohanSSS/Node-Shell-learning#readme",
+  "devDependencies": {
+    "tape": "^4.10.1"
+  }
 }
