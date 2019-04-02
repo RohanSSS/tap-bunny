@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/RohanSSS/Node-Shell-learning#readme",
   "devDependencies": {
-    "tape": "^4.10.1"
+    "tape": "^4.10.1",
+    "tap-spec": "^5.0.0",
+    "chalk": "^2.4.2"
   }
 }

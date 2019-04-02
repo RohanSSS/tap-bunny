@@ -11,6 +11,6 @@ test("two plus three is five", t => {
 })
 
 test("two plus four is six", t => {
-    t.equals(2+4, 6, "should equal six");
+    t.equals(2+4, 10, "should equal six");
     t.end();
 })
