@@ -4,7 +4,8 @@
   "description": "learning node shell, with some experimentation",
   "main": "index.js",
   "scripts": {
-    "test": "tape test.js | node bunny.js"
+    "test": "tape *.test.js | node bunny.js",
+    "fail": "tape fail-test.js | node bunny.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "devDependencies": {
     "tap-spec": "^5.0.0",
     "tape": "^4.10.1"
+  },
+  "dependencies": {
+    "colors": "^1.3.3"
   }
 }
