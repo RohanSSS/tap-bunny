@@ -1,6 +1,6 @@
 {
   "name": "tap-bunny",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "basic test output formatter, to be used with tape",
   "main": "bunny.js",
   "scripts": {
@@ -14,6 +14,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bin": {
+    "tap-bunny": "bunny.js"
+  },
   "bugs": {
     "url": "https://github.com/RohanSSS/Node-Shell-learning/issues"
   },

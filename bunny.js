@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const colors = require("colors");
 
 let success = `|￣￣￣￣￣|
