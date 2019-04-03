@@ -1,11 +1,6 @@
 const colors = require("colors");
 
-const bunny = () => {
-  const readStream = process.openStdin();
-
-  let msg = "";
-
-  let success = `|￣￣￣￣￣|
+let success = `|￣￣￣￣￣|
 | SUCCESS  |
 | I <3 U   |
 |＿＿＿＿＿|
@@ -13,13 +8,16 @@ const bunny = () => {
 (•ㅅ•) ||
 / 　 づ`;
 
-  let failure = `|￣￣￣￣￣|
+let failure = `|￣￣￣￣￣|
 | FAILURE  |
 | I H8 U   |
 |＿＿＿＿＿|
 (\\__/) ||
 (•ㅅ•) ||
 / 　 づ`;
+
+const bunny = () => {
+  const readStream = process.openStdin();
 
   let fileContent = "";
 
