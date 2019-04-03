@@ -1,6 +1,6 @@
 {
   "name": "tap-bunny",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "basic test output formatter, to be used with tape",
   "main": "bunny.js",
   "scripts": {
