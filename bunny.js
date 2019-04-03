@@ -35,6 +35,7 @@ readStream.on("end", () => {
 
   formatLines(arr);
   addBunny(arr);
+  process.stdout.write("\n\n");
 });
 
 const addBunny = arr => {
@@ -58,6 +59,17 @@ const formatLines = arr => {
     } else if (line.slice(0, 3) == "not") {
       const formatted = line.slice(6).red;
       process.stdout.write(" " + formatted + "\n");
+    } else if (line.slice(0, 7) == "# tests" && i > arr.length - 7) {
+      const formatted = "Tests: ".cyan.bold + line.slice(7).bold.blue;
+      process.stdout.write("\n" + formatted + "\n");
+    } else if (line.slice(0, 6) == "# pass" && i > arr.length - 7) {
+      const formatted = "Passed:".cyan.bold + line.slice(7).green.bold;
+      process.stdout.write(formatted + "\n");
+    } else if (i == arr.length - 3) {
+      let num = "0";
+      if (line.slice(0, 6) == "# fail") num = line.slice(8);
+      const formatted = "Failed: ".cyan.bold + num.red.bold;
+      process.stdout.write(formatted + "\n");
     }
   });
   string += "\n";
