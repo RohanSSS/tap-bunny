@@ -19,3 +19,8 @@ test("two plus five is seven", t => {
   t.equals(2 + 5, 7, "should equal seven");
   t.end();
 });
+
+test("two plus six is eight", t => {
+  t.equals(2 + 5, 8, "should equal eight");
+  t.end();
+});

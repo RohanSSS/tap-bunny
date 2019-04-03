@@ -31,8 +31,9 @@ readStream.on("data", chunk => {
 
 readStream.on("end", () => {
   var arr = fileContent.toString().split("\n");
-  console.log(arr);
+  // console.log(arr);
 
+  displayErrors(arr);
   formatLines(arr);
   addBunny(arr);
   process.stdout.write("\n\n");
@@ -41,14 +42,13 @@ readStream.on("end", () => {
 const addBunny = arr => {
   // console.log(arr);
   if (arr[arr.length - 3].includes("ok")) {
-    process.stdout.write("\n" + success);
+    process.stdout.write(success);
   } else {
-    process.stdout.write("\n" + failure);
+    process.stdout.write(failure);
   }
 };
 
 const formatLines = arr => {
-  let string = "";
   arr.map((line, i) => {
     if (line.charAt(0) == "#" && i < arr.length - 6) {
       const formatted = line.slice(2).bold;
@@ -72,6 +72,29 @@ const formatLines = arr => {
       process.stdout.write(formatted + "\n");
     }
   });
-  string += "\n";
-  return string;
+  process.stdout.write("\n");
+};
+
+const displayErrors = arr => {
+  let errors = [];
+  arr.map((line, i) => {
+    if (line.slice(0, 5) == "  ---") {
+      let b = false;
+      let e = [];
+      for (let j = i - 1; arr[j] != "  ..."; j++) {
+        if (arr[j] != "  ---") e.push(arr[j]);
+      }
+      errors.push(e);
+    }
+  });
+  // console.log(errors);
+  errors.map(arr => {
+    const title = arr.shift().slice(7).underline.bold;
+    process.stdout.write(title + "\n");
+    arr.map(line => {
+      const formatted = line.slice(2).yellow;
+      process.stdout.write(formatted + "\n");
+    });
+    process.stdout.write("\n");
+  });
 };
