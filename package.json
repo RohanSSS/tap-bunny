@@ -1,8 +1,8 @@
 {
-  "name": "Node-Shell-learning",
+  "name": "tap-bunny",
   "version": "1.0.0",
-  "description": "learning node shell, with some experimentation",
-  "main": "index.js",
+  "description": "basic test output formatter, to be used with tape",
+  "main": "bunny.js",
   "scripts": {
     "test": "tape *.test.js | node bunny.js",
     "fail": "tape fail-test.js | node bunny.js"

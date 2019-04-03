@@ -1,9 +1,11 @@
 const colors = require("colors");
-const readStream = process.openStdin();
 
-let msg = "";
+const bunny = () => {
+  const readStream = process.openStdin();
 
-let success = `|￣￣￣￣￣|
+  let msg = "";
+
+  let success = `|￣￣￣￣￣|
 | SUCCESS  |
 | I <3 U   |
 |＿＿＿＿＿|
@@ -11,7 +13,7 @@ let success = `|￣￣￣￣￣|
 (•ㅅ•) ||
 / 　 づ`;
 
-let failure = `|￣￣￣￣￣|
+  let failure = `|￣￣￣￣￣|
 | FAILURE  |
 | I H8 U   |
 |＿＿＿＿＿|
@@ -19,25 +21,26 @@ let failure = `|￣￣￣￣￣|
 (•ㅅ•) ||
 / 　 づ`;
 
-let fileContent = "";
+  let fileContent = "";
 
-readStream.on("data", chunk => {
-  fileContent += chunk;
-});
+  readStream.on("data", chunk => {
+    fileContent += chunk;
+  });
 
-// readStream.on("error", () => {
-//     cb(err, fileContent);
-// })
+  // readStream.on("error", () => {
+  //     cb(err, fileContent);
+  // })
 
-readStream.on("end", () => {
-  var arr = fileContent.toString().split("\n");
-  // console.log(arr);
+  readStream.on("end", () => {
+    var arr = fileContent.toString().split("\n");
+    // console.log(arr);
 
-  displayErrors(arr);
-  formatLines(arr);
-  addBunny(arr);
-  process.stdout.write("\n\n");
-});
+    displayErrors(arr);
+    formatLines(arr);
+    addBunny(arr);
+    process.stdout.write("\n\n");
+  });
+};
 
 const addBunny = arr => {
   // console.log(arr);
@@ -98,3 +101,5 @@ const displayErrors = arr => {
     process.stdout.write("\n");
   });
 };
+
+module.exports = bunny;
