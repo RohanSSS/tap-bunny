@@ -16,7 +16,7 @@ let failure = `|￣￣￣￣￣|
 (•ㅅ•) ||
 / 　 づ`;
 
-const bunny = () => {
+exports.bunny = () => {
   const readStream = process.openStdin();
 
   let fileContent = "";
@@ -99,5 +99,3 @@ const displayErrors = arr => {
     process.stdout.write("\n");
   });
 };
-
-module.exports = bunny;
