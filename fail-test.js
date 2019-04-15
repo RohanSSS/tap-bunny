@@ -1,6 +1,7 @@
 const test = require("tape");
 
 test("two plus two is four", t => {
+  console.log("This is a console.log");
   t.equals(2 + 2, 4, "should equal four");
   t.end();
 });
