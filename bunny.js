@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const colors = require("colors");
-const tapOut = require("tap-out");
 
 let success = `|￣￣￣￣￣|
 | SUCCESS  |
@@ -19,26 +18,26 @@ let failure = `|￣￣￣￣￣|
 (•ㅅ•) ||
 / 　 づ`;
 
-const bunny = () => {
-  const readStream = process.openStdin();
-
-  let fileContent = "";
-
-  readStream.on("data", chunk => {
-    fileContent += chunk;
-  });
-
-  readStream.on("end", () => {
-    if (fileContent === "") return process.stdout.write("\nERROR".red + "\n");
-    var arr = fileContent.toString().split("\n");
-    // console.log(arr);
-
-    displayErrors(arr);
-    formatLines(arr);
-    addBunny(arr);
-    process.stdout.write("\n\n");
-  });
-};
+// const bunny = () => {
+//   const readStream = process.openStdin();
+//
+//   let fileContent = "";
+//
+//   readStream.on("data", chunk => {
+//     fileContent += chunk;
+//   });
+//
+//   readStream.on("end", () => {
+//     if (fileContent === "") return process.stdout.write("\nERROR".red + "\n");
+//     var arr = fileContent.toString().split("\n");
+//     // console.log(arr);
+//
+//     displayErrors(arr);
+//     formatLines(arr);
+//     addBunny(arr);
+//     process.stdout.write("\n\n");
+//   });
+// };
 
 const addBunny = arr => {
   // console.log(arr);
@@ -117,4 +116,10 @@ const displayErrors = arr => {
   });
 };
 
-bunny();
+// bunny();
+
+module.exports = {
+  displayErrors,
+  formatLines,
+  addBunny
+};
