@@ -2,21 +2,21 @@
 
 const colors = require("colors");
 
-let success = `|￣￣￣￣￣|
-| SUCCESS  |
-| I <3 U   |
-|＿＿＿＿＿|
-(\\__/) ||
-(•ㅅ•) ||
-/ 　 づ`;
+const success = `  |￣￣￣￣￣|
+  | SUCCESS  |
+  | I <3 U   |
+  |＿＿＿＿＿|
+  (\\__/) ||
+  (•ㅅ•) ||
+  / 　 づ`;
 
-let failure = `|￣￣￣￣￣|
-| FAILURE  |
-| I H8 U   |
-|＿＿＿＿＿|
-(\\__/) ||
-(•ㅅ•) ||
-/ 　 づ`;
+const failure = `  |￣￣￣￣￣|
+  | FAILURE  |
+  | I H8 U   |
+  |＿＿＿＿＿|
+  (\\__/) ||
+  (${"•".red}ㅅ${"•".red}) ||
+  / 　 づ`;
 
 // const bunny = () => {
 //   const readStream = process.openStdin();
@@ -116,10 +116,24 @@ const displayErrors = arr => {
   });
 };
 
+const errorBunny = () => {
+  let error = `  |￣￣￣￣￣|
+  | ${"ERROR:".red}   |
+  | ${"U ARE A".yellow}  |
+  | ${"TERRIBLE".yellow} |
+  | ${"PERSON".yellow}   |
+  |＿＿＿＿＿|
+  (\\__/) ||
+  (•ㅅ•) ||
+  / 　 づ`;
+  process.stdout.write("\n" + error + "\n\n");
+};
+
 // bunny();
 
 module.exports = {
   displayErrors,
   formatLines,
-  addBunny
+  addBunny,
+  errorBunny
 };

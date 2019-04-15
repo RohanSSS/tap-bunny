@@ -1,11 +1,13 @@
 {
   "name": "tap-bunny",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "basic test output formatter, to be used with tape",
   "main": "bunny.js",
   "scripts": {
     "test": "tape *.test.js | node bin/tap-bunny.js",
-    "fail": "tape fail-test.js | node bin/tap-bunny.js"
+    "fail": "tape fail-test.js | node bin/tap-bunny.js",
+    "syntax-err": "tape error-test.js | node bin/tap-bunny.js",
+    "no-tests-err": "tape asjhgjasd.js | node bin/tap-bunny.js"
   },
   "repository": {
     "type": "git",

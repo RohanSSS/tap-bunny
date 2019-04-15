@@ -11,7 +11,7 @@ readStream.on("data", chunk => {
 });
 
 readStream.on("end", () => {
-  if (fileContent === "") return process.stdout.write("\nERROR".red + "\n");
+  if (fileContent === "") return bunny.errorBunny();
   var arr = fileContent.toString().split("\n");
 
   bunny.displayErrors(arr);
