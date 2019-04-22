@@ -55,11 +55,11 @@ const formatLines = arr => {
       const formatted = line.slice(2).bold;
       process.stdout.write("\n  " + formatted + "\n");
     } else if (line.slice(0, 2) == "ok") {
-      const prefix = line.slice(3, 4) + ". ";
+      const prefix = line.split(" ")[1] + ". ";
       const formatted = prefix.bold.green + line.slice(5).green;
       process.stdout.write("    " + formatted + "\n");
     } else if (line.slice(0, 3) == "not") {
-      const prefix = line.slice(7, 8) + ". ";
+      const prefix = line.split(" ")[2] + ". ";
       const formatted = prefix.bold.red + line.slice(9).red;
       process.stdout.write("    " + formatted + "\n");
     } else if (line.slice(0, 7) == "# tests" && i > arr.length - 7) {
